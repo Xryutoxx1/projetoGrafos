@@ -1,3 +1,5 @@
+LINK DO ARQUIVO COM O CRONOGRAMA: https://docs.google.com/document/d/1W9WZ5O8ZJS67jE_Mkl7tf4X2Dk4F450c4-SS1jqJgrw/edit#heading=h.5bd2224870uz
+
 # projetoGrafos
 projeto em equipe para a matéria de grafos.
 
