@@ -1,4 +1,4 @@
-package projeto.grafos;
+package projeto.projetografos; 
 
 /**
  * Classe que define a interface gráfica da segunda tela do programa.

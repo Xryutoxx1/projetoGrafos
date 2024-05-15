@@ -1,4 +1,4 @@
-package projeto.grafos; // Declaração do pacote onde a classe Grafos está contida
+package projeto.projetografos; // Declaração do pacote onde a classe Grafos está contida
 
 /**
  * Classe principal Grafos.

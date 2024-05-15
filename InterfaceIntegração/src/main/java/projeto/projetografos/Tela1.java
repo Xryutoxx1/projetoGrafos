@@ -1,4 +1,4 @@
-package projeto.grafos;
+package projeto.projetografos; 
 
 import projeto.projetografos.LerArquivo;
 
@@ -97,8 +97,12 @@ public class Tela1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_caixaEntrada1ActionPerformed
 
+    
+    /*BOTÃO CONVERTER QUE ESTÁ NA TELA 1 */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        
+        
+        
       /*
         Quando o botão converter é apertado, o método que chama a segunda tela é acionado,
         e o valor digitado na caixa de texto vinculado a variável "caixaEntrada1" é armazenado
@@ -114,15 +118,30 @@ public class Tela1 extends javax.swing.JFrame {
       this.tela2.setVisible(true); 
       this.tela2.transmissor = this.caixaEntrada1.getText();
 
+      
+      /*precisa ser string para ser lido e mostrado na tela
+      a conversão está sendo feita na tela1 abaixo*/
       LerArquivo lerArquivo = new LerArquivo(this.tela2.transmissor);
-      this.tela2.transmissor = lerArquivo.getConteudoArquivo();
+    int[] conteudoArquivo = lerArquivo.getConteudoArquivo();
 
-        
+    // Convertendo o array de inteiros para uma string
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < conteudoArquivo.length; i++) {
+        sb.append(conteudoArquivo[i]);
+        if (i < conteudoArquivo.length - 1) {
+          sb.append(", "); // Adiciona uma vírgula entre os elementos
+        }
+    }
+    this.tela2.transmissor = sb.toString();
+       
     
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
+    
+    
     private void caixaEntrada1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_caixaEntrada1ComponentAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_caixaEntrada1ComponentAdded
