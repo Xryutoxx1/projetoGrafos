@@ -1,5 +1,6 @@
 package projeto.projetografos; 
 
+import java.io.IOException;
 import java.nio.file.Files; // 
 import java.nio.file.Path; // 
 import java.nio.file.Paths; // Importação das classes necessárias para localizar e carregar os arquivos de entrada.
@@ -16,12 +17,13 @@ public class LerArquivo {
     /**
      * Construtor da classe LerArquivo.
      * Lê o conteúdo do arquivo especificado e armazena em uma string.
+     * @param nomeArquivo
      * @recebe como parâmetro uma string nomeArquivo, que serve para encontrar no endereço o título do arquivo
      * que será carregado.
      */
     public LerArquivo(String nomeArquivo) {
         // Cria um objeto Path com o caminho do arquivo
-        Path caminho = Paths.get("C:/Users/lucas/Downloads/grafosupdate/projetoGrafos-main/" + nomeArquivo + ".txt");
+        Path caminho = Paths.get("C:\\Users\\lucas\\Downloads\\grafosupdate\\projetoGrafos-main" + nomeArquivo + ".txt");        
         try {
             // Lê todos os bytes do arquivo
             byte[] bytesDoArquivo = Files.readAllBytes(caminho);
@@ -35,6 +37,8 @@ public class LerArquivo {
                 grafo[i] = Integer.parseInt(transformaStrEmInt[i]); //Transporta os STR para o novo vetor e transforma em INT
                 } 
             
+            /*if(if para o trivial){}*/
+            
             /*aqui será feita a divisão dos números em vetores de iguais*/
             int linhacoluna = (int) Math.sqrt(transformaStrEmInt.length);/*pegando o tamanho de linhas e colunas usando a raiz da matriz*/
             int linhacoluna1 = linhacoluna; /*cópia de linhacoluna para não ter problema nos loops encadiados*/
@@ -46,20 +50,30 @@ public class LerArquivo {
                 matriz[i][j] = grafo[index];
                 index++;
                 }
-                
-            for(int x =0; x < grafo.length; x++){
-                int QntDeInteracao = 0;
-                for(int y = 0; y < QntDeInteracao;  y++){
-                    if(matriz[x][QntDeInteracao] = 1){
+            }
+            /*criar uma nova matriz para receber as Arestas já formatadas*/
+            int[][] MatrizDeAresta = new int[linhacoluna][linhacoluna];
+            
+            /*enche a MatrizdeAresta com as Arestas*/
+            for(int x =0; x < linhacoluna; x++){
+                int contador = 0;
+                for(int y = 0; y <= contador;  y++){
+                if(matriz[x][y] == 1 ){
                     
-                        
-                    }
+                    MatrizDeAresta[x][y] = matriz[x][y]; 
+                   
                 }
+                contador++;
                 }
             }
-            
-            
-        } catch (Exception e) {
+            /*A MatrizDeAresta é a variável que está em formato de Matriz é a mesma que deve ser utilizada para criar a matriz final,
+              para acessar o índice de cada local utilize dois for um dentro do outro o primeiro vai pegar a linha e o segundo a coluna
+              dentro do segundo for você faz todo o calculo necessário para chegar a matriz final, após fazer o calculo você só implanta o resultado 
+              na matriz resultante.
+              lembrar de criar a matriz final e passar a mesma para o RETURN dentro da função getConteudoArquivo()
+              pode haver algum erro de sintaxe no código porfavor corrigir oque conseguir e lembrar de modificar o endereço do arquivo no inicio da função lerArquivo()
+            */
+        } catch (IOException | NumberFormatException e) {
             // Em caso de exceção, definimos transformaEmStr como uma mensagem de erro
             transformaEmStr = "Erro inesperado: " + e.getMessage();
         }
