@@ -1,0 +1,6 @@
+Transmissão de dados recebido em um Jframe para outro,
+imprimindo no segundo Jframe o resultado, não é preciso
+clicar em nenhum botão no segundo Jframe para o resultado
+aparecer. Isso já ocorre automaticamente a partir do momento
+a variavel de transmissão é alterada. Logo, quando se abre
+o segundo Jframe o valor já está modificado e surge na tela.
