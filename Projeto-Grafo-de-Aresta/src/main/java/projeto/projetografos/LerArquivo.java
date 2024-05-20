@@ -12,7 +12,7 @@ public class LerArquivo {
     private int[][] matriz; // Variável de instância para armazenar a matriz de inteiros
 
     public LerArquivo(String nomeArquivo) {
-        Path caminho = Paths.get("C:\\Users\\david\\OneDrive\\Área de Trabalho\\InterfaceIntegração\\src\\main\\resources\\entradaTxt\\" + nomeArquivo + ".txt");        
+        Path caminho = Paths.get("src\\main\\resources\\entradaTxt\\" + nomeArquivo + ".txt");        
         try {
             byte[] bytesDoArquivo = Files.readAllBytes(caminho);
             transformaEmStr = new String(bytesDoArquivo);
