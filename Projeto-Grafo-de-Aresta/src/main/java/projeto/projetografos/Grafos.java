@@ -1,22 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
-package projeto.grafos;
-
+package projeto.grafos; // Declaração do pacote do projeto
 
 /**
- *
- * @author usuario
+ * Classe principal do programa.
  */
 public class Grafos {
 
     public static void main(String[] args) {
  
-        Tela1 minhaTela1 = new Tela1();
-        minhaTela1.setVisible(true);
+        Tela1 minhaTela1 = new Tela1(); // Cria uma instância da Tela1
+        minhaTela1.setVisible(true); // Torna a tela visível
         
-        
- 
     }
 }
